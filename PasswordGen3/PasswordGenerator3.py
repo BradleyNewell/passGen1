@@ -1,16 +1,15 @@
 import string
 from secrets import choice
 
+data = {}
+a_file = open('saved_passwords.txt', 'a+')
+
 
 class Password:
 
-    def __init__(self, a_file, length, name):
-        self.a_file = a_file
+    def __init__(self, length, name):
         self.length = length
         self.name = name
-
-    data = {}
-    data['Passwords'] = []
 
     def p_gen(self):
         chars = string.ascii_letters + string.digits
@@ -20,16 +19,10 @@ class Password:
         return pw
 
     def to_dict(self):
-        pw_dict = {}
-        pw_dict.update({self.name: self.p_gen()})
-        return pw_dict
-
-    def p_store(self):
-        with open(self.a_file, 'a') as a_file:
-            a_file.write(self.p_gen())
+        data.update({self.name: self.p_gen()})
+        a_file.write(str(data))
 
 
-''' Example initialisation of the class, this will create a file called passwordfile and generate a 28 character
-password stored in a dictionary with github being the key and the password as the value
-
-password1 = Password('passwordfile.txt', 28, Github) '''
+password1 = Password(28, 'Github')
+password1.p_gen()
+password1.to_dict()
