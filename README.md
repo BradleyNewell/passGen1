@@ -13,7 +13,9 @@ I do plan to further update this project in future and I am looking to add some 
 # PasswordGen3 29/09/2019
 I've decided to keep the other earlier versions of this project up as a small personal reminder of the progress I've made and may continue to add new iterations in the future.
 
+# PasswordGeneratorGUI 25/06/2020
+Final version complete with GUI 
 
 
 Thank you for checking out this mini project.
-BradleyXVIII on GitHub
+BradleyNewell on GitHub
